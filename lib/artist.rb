@@ -1,4 +1,6 @@
+require 'pry'
 class Artist
+
 
     attr_accessor :name
 
@@ -14,6 +16,7 @@ class Artist
     end
 
     def new_song(name, genre)
+        #binding.pry
        Song.new(name, self, genre)
     end
 
@@ -24,10 +27,6 @@ class Artist
     end
 
     def genres
-
-        
-    end
-
-
-    
+        self.songs.map {|song| song.genre}
+    end  
 end
